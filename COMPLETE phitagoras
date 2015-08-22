@@ -1,0 +1,49 @@
+10 CLS
+judul$ = "phitagoras"
+a = LEN(judul$)
+tengah = (80 / 2) - (a / 2)
+PRINT STRING$(80, "-")
+PRINT TAB(tengah); "PHITAGORAS"
+PRINT STRING$(80, "-")
+COLOR 4
+PRINT "#ket : yang di cari beri nilai 0"
+COLOR 7
+PRINT
+INPUT "masukkan Tinggi:", a
+INPUT "masukkan Alas:", b
+INPUT "masukkan Miring:", c
+PRINT
+50
+PRINT "1. MENCARI SISI MIRING"
+PRINT "2. MENCARI ALAS ATAU TINGGI"
+PRINT
+INPUT "MASUKKAN PILIHAN ANDA (1/2)", opt
+
+SELECT CASE opt
+    CASE 1
+        hasil = (a ^ 2 + b ^ 2) ^ 0.5
+    CASE 2
+        hasil = ((c ^ 2) - ((b + a) ^ 2)) ^ 0.5
+    CASE ELSE
+        COLOR 20
+        PRINT "Lu input apaan bro"
+        COLOR 7
+        PRINT
+        GOTO 50
+
+END SELECT
+PRINT
+PRINT "jawaban anda:", hasil
+20
+PRINT "1. Hitung Lagi :"
+PRINT "2. Keluar"
+PRINT
+INPUT "Masukkan pilihan anda :", opt
+SELECT CASE opt
+    CASE 1
+        GOTO 10
+    CASE 2
+        END
+    CASE ELSE
+        GOTO 20
+END SELECT
