@@ -1,0 +1,47 @@
+REM Penghitungan berat badan ideal
+10 CLS
+PRINT STRING$(80, "*")
+PRINT "                                   BB IDEAL"
+PRINT STRING$(80, "*")
+PRINT
+INPUT "tinggi badan :", t
+INPUT "berat badan :", bb
+i = (t - 100) - (0.1 * (t - 100))
+IF bb > i THEN
+    KET$ = "GEMUK"
+ELSEIF bb = i THEN
+    KET$ = "IDEAL"
+ELSE
+    KET$ = "KURUS"
+END IF
+PRINT
+PRINT KET$
+PRINT
+PRINT "ANDA HARUS"
+SELECT CASE KET$
+    CASE "GEMUK"
+        PRINT "DIET"
+    CASE "IDEAL"
+        PRINT "PERTAHANKAN"
+    CASE ELSE
+        PRINT "MAKAN LAGI"
+
+
+END SELECT
+20
+PRINT "1. Hitung Lagi"
+PRINT "2. Keluar"
+PRINT
+INPUT "Masukkan pilihan anda", opt
+SELECT CASE opt
+    CASE 1
+        GOTO 10
+    CASE 2
+        END
+    CASE ELSE
+        GOTO 20
+END SELECT
+
+
+
+REM penghitungan berat badan ideal
