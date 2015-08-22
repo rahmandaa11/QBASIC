@@ -1,0 +1,77 @@
+1 CLS
+judul$ = "lingkaran"
+a = LEN(judul$)
+tengah = (80 / 2) - (a / 2)
+COLOR 2
+PRINT STRING$(80, "-")
+PRINT TAB(tengah); "LINGKARAN"
+PRINT STRING$(80, "-")
+COLOR 7
+INPUT "masukkan jari jari :", r
+INPUT "masukkan luas :", L
+INPUT "masukkan keliling :", K
+PRINT
+COLOR 5
+PRINT "1. mencari luas"
+PRINT "2. mencari keliling"
+PRINT "3. mencari jari jari"
+PRINT
+COLOR 7
+10 INPUT "masukkan pilihan anda (1/2/3):", opt
+SELECT CASE opt
+    CASE 1
+        IF L <> 0 THEN
+            hasil = L
+        ELSEIF r = 0 AND K <> 0 THEN
+            r = (K / (2 * 3.14))
+            GOTO 15
+        ELSEIF r <> 0 THEN
+            15 hasil = (3.14 * r ^ 2)
+        ELSE
+            COLOR 20
+            PRINT "EROR!! "
+            COLOR 7
+
+        END IF
+    CASE 2
+        IF K <> 0 THEN
+            hasil = K
+        ELSEIF r = 0 AND L <> 0 THEN
+            r = ((L / 3.14) ^ 0.5)
+            GOTO 20
+        ELSEIF r <> 0 THEN
+            20 hasil = (2 * 3.14 * r)
+        ELSE
+            COLOR 20
+            PRINT "EROR!!"
+            COLOR 7
+        END IF
+    CASE 3
+        IF L = 0 THEN
+            50 hasil = (K / (2 * 3.14))
+        ELSEIF K = 0 THEN
+            hasil = ((L / 3.14) ^ 0.5)
+        ELSEIF K <> 0 AND L <> 0 THEN
+            GOTO 50
+
+        END IF
+    CASE ELSE
+        COLOR 20
+        PRINT "pilihan anda salah, coba lagi"
+        GOTO 10
+        COLOR 7
+END SELECT
+PRINT
+PRINT "JAWABAN ANDA :", hasil
+PRINT
+PRINT "1. Coba lagi"
+PRINT "2. Keluar"
+100 INPUT "masukkan pilihan anda :", opt
+SELECT CASE opt
+    CASE 1
+        GOTO 1
+    CASE 2
+        END
+    CASE ELSE
+        GOTO 100
+END SELECT
