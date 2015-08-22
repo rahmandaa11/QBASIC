@@ -1,0 +1,30 @@
+10 CLS
+judul$ = "luas segitiga"
+a = LEN(judul$)
+tengah = (80 / 2) - (a / 2)
+COLOR 9
+PRINT STRING$(80, "-")
+PRINT TAB(tengah); "LUAS SEGITIGA"
+PRINT STRING$(80, "-")
+PRINT
+PRINT
+COLOR 7
+INPUT "Alas :", a
+INPUT "Tinggi :", t
+
+Luas = (a * t) / 2
+PRINT
+PRINT "Luas bangunan ini:"; Luas
+20
+PRINT "1. Hitung Lagi :"
+PRINT "2. Keluar"
+PRINT
+INPUT "Masukkan pilihan anda :", opt
+SELECT CASE opt
+    CASE 1
+        GOTO 10
+    CASE 2
+        END
+    CASE ELSE
+        GOTO 20
+END SELECT
